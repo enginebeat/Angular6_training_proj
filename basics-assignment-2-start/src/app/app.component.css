@@ -1,0 +1,7 @@
+button{
+    transition: .2s;
+}
+
+button:active {
+    transform: translateY(3px);
+}
