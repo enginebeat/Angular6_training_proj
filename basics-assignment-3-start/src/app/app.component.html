@@ -12,7 +12,7 @@
       <div class="myDiv">
         <button (click)="toogleDisplay($event)">{{contentDBtn}}</button>
         <p *ngIf="displayContent">Secret password = Engine</p>
-        <p *ngFor="let click of buttonClicks" [ngStyle]="click.clickNumber >= 4 ? {backgroundColor:'blue'} : {backgroundColor: 'none'}" [ngClass]="{'n-element-text':click.clickNumber >= 4}" >{{click.clickNumber}} {{click.timeStamp}}</p>
+        <p *ngFor="let click of buttonClicks; let i = index" [ngStyle]="i >= 4 ? {backgroundColor:'blue'} : {backgroundColor: 'none'}" [ngClass]="{'n-element-text': i >= 4}" >{{click.clickNumber}} {{click.timeStamp}}</p>
       </div>
     </div>
   </div>
