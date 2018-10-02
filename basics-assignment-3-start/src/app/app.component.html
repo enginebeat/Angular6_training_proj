@@ -8,6 +8,12 @@
         <li>Log all button clicks in an array and output that array below the secret paragraph (maybe log a timestamp or simply an incrementing number)</li>
         <li>Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white color (ngClass)</li>
       </ol>
+
+      <div class="myDiv">
+        <button (click)="toogleDisplay($event)">{{contentDBtn}}</button>
+        <p *ngIf="displayContent">Secret password = Engine</p>
+        <p *ngFor="let click of buttonClicks" [ngStyle]="click.clickNumber >= 4 ? {backgroundColor:'blue'} : {backgroundColor: 'none'}" [ngClass]="{'n-element-text':click.clickNumber >= 4}" >{{click.clickNumber}} {{click.timeStamp}}</p>
+      </div>
     </div>
   </div>
 </div>
